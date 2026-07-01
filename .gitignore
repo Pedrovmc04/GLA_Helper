@@ -1,0 +1,25 @@
+# ==== Site antigo (mantido em disco apenas como referencia) ====
+SiteGLA/
+
+# ==== Assistente OCR (projeto Python independente, nao versionado) ====
+quiz-assistant/
+
+# ==== Python ====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ==== Node (caso futuramente seja usado) ====
+node_modules/
+dist/
+.cache/
+
+# ==== SO / editores ====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

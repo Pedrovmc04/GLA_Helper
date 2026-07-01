@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLA Helper</title>
+  <meta name="description" content="Ferramentas da comunidade para Grand Line Adventures: Foxy Quiz e Sistema de Boost." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/features/quiz.css" />
+  <link rel="stylesheet" href="assets/css/features/boost.css" />
+</head>
+<body>
+  <div class="ocean"></div>
+  <div class="scrim" data-close-sidebar></div>
+
+  <div class="app-shell">
+    <!-- ===================== TOPBAR ===================== -->
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Menu">&#9776;</button>
+      <a class="brand" href="#/home">
+        <span class="brand-mark">&#9784;</span>
+        <span class="brand-text">GLA Helper <small>Grand Line Adventures</small></span>
+      </a>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-actions">
+        <div class="lang-switch" id="lang-switch" role="group" aria-label="Idioma">
+          <button class="lang-btn" data-lang="pt-BR">BR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="profile-chip" id="profile-chip">
+          <span class="profile-avatar" id="profile-avatar">&#128100;</span>
+          <span class="profile-chip-name" id="profile-chip-name">Perfil</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-group">
+        <div class="nav-group-title" data-i18n="nav.start">Inicio</div>
+        <ul class="nav-list">
+          <li><a class="nav-link" data-nav="home"><span class="nav-ico">&#127968;</span><span data-i18n="nav.home">Inicio</span></a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-group">
+        <div class="nav-group-title" data-i18n="nav.tools">Ferramentas</div>
+        <ul class="nav-list">
+          <li><a class="nav-link" data-nav="quiz"><span class="nav-ico">&#129418;</span><span data-i18n="nav.quiz">Foxy Quiz</span></a></li>
+          <li><a class="nav-link" data-nav="boost"><span class="nav-ico">&#9874;</span><span data-i18n="nav.boost">Sistema de Boost</span></a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-group">
+        <div class="nav-group-title" data-i18n="nav.soon">Em breve</div>
+        <ul class="nav-list">
+          <li><a class="nav-link disabled"><span class="nav-ico">&#128202;</span><span data-i18n="nav.xp">Calculadora de XP</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
+          <li><a class="nav-link disabled"><span class="nav-ico">&#128674;</span><span data-i18n="nav.boats">Planejador de Barcos</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
+          <li><a class="nav-link disabled"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
+          <li><a class="nav-link disabled"><span class="nav-ico">&#128203;</span><span data-i18n="nav.tracker">Tracker Semanal</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ===================== CONTEUDO ===================== -->
+    <div class="content">
+      <div class="content-inner">
+
+        <!-- ---------- HOME ---------- -->
+        <section class="view" data-view="home" id="view-home">
+          <div class="view-head">
+            <p class="view-eyebrow" data-i18n="home.eyebrow">Grand Line Adventures</p>
+            <h1 class="view-title">GLA Helper</h1>
+            <p class="view-sub" data-i18n="home.sub">Ferramentas da comunidade para te ajudar no jogo. Escolha uma ferramenta ao lado ou abaixo.</p>
+          </div>
+          <div class="home-grid">
+            <a class="feature-card" data-nav="quiz">
+              <span class="fc-icon">&#129418;</span>
+              <h3 data-i18n="nav.quiz">Foxy Quiz</h3>
+              <p data-i18n="home.quizDesc">Treine as afirmacoes de Verdade ou Mentira, pesquise o gabarito e rode testes automaticos.</p>
+            </a>
+            <a class="feature-card" data-nav="boost">
+              <span class="fc-icon">&#9874;</span>
+              <h3 data-i18n="nav.boost">Sistema de Boost</h3>
+              <p data-i18n="home.boostDesc">Guia de melhoria, aprimoramento e reforja, com calculadoras de custo em cristais e gemas.</p>
+            </a>
+            <span class="feature-card soon">
+              <span class="fc-icon">&#128202;</span>
+              <h3 data-i18n="nav.xp">Calculadora de XP</h3>
+              <p data-i18n="home.xpDesc">Descubra quantas pocoes de XP faltam para o nivel desejado.</p>
+              <span class="fc-tag" data-i18n="badge.soon">Soon</span>
+            </span>
+            <span class="feature-card soon">
+              <span class="fc-icon">&#128674;</span>
+              <h3 data-i18n="nav.boats">Planejador de Barcos</h3>
+              <p data-i18n="home.boatsDesc">Materiais, refino e custo em berries para arsenal e skins do navio.</p>
+              <span class="fc-tag" data-i18n="badge.soon">Soon</span>
+            </span>
+          </div>
+        </section>
+
+        <!-- ---------- FOXY QUIZ ---------- -->
+        <section class="view" data-view="quiz" id="view-quiz">
+          <div class="quiz-wrap">
+            <!-- TELA INICIAL -->
+            <section id="start-screen" class="screen active">
+              <div class="logo-mark">&#9784;</div>
+              <h1 class="title">Foxy Quiz</h1>
+              <p class="subtitle" data-i18n="quiz.subtitle">Verdade ou Mentira</p>
+              <p class="intro" data-i18n-html="quiz.intro">
+                Uma afirmacao sobre o mundo de Grand Line Adventures aparece na tela.
+                Decida se ela e <strong>verdadeira</strong> ou <strong>mentira</strong>.
+                Acerte o maximo que conseguir e construa sua sequencia!
+              </p>
+              <div class="bank-info">
+                <span><strong id="count-total">0</strong> <span data-i18n="quiz.deck">afirmacoes no baralho</span></span>
+              </div>
+              <div class="mode-list">
+                <button id="btn-mode-classic" class="btn-mode">
+                  <span class="mode-icon">&#9876;</span>
+                  <span class="mode-text">
+                    <strong data-i18n="quiz.mode.classic">Classico</strong>
+                    <small data-i18n="quiz.mode.classicDesc">Responda no seu ritmo e construa sua sequencia.</small>
+                  </span>
+                </button>
+                <button id="btn-mode-timed" class="btn-mode">
+                  <span class="mode-icon">&#9201;</span>
+                  <span class="mode-text">
+                    <strong data-i18n="quiz.mode.timed">Contra o Tempo</strong>
+                    <small data-i18n="quiz.mode.timedDesc">10 segundos por afirmacao. Avanca sozinho!</small>
+                  </span>
+                </button>
+                <button id="btn-mode-search" class="btn-mode">
+                  <span class="mode-icon">&#128269;</span>
+                  <span class="mode-text">
+                    <strong data-i18n="quiz.mode.search">Pesquisa</strong>
+                    <small data-i18n="quiz.mode.searchDesc">Procure afirmacoes por palavra e veja o gabarito.</small>
+                  </span>
+                </button>
+                <button id="btn-mode-auto" class="btn-mode">
+                  <span class="mode-icon">&#129302;</span>
+                  <span class="mode-text">
+                    <strong data-i18n="quiz.mode.auto">Auto / Teste</strong>
+                    <small data-i18n="quiz.mode.autoDesc">Percorre todas as afirmacoes e registra acertos e erros.</small>
+                  </span>
+                </button>
+              </div>
+            </section>
+
+            <!-- TELA DO JOGO -->
+            <section id="game-screen" class="screen">
+              <header class="scoreboard">
+                <div class="score-item score-correct">
+                  <span class="score-label" data-i18n="quiz.score.correct">Acertos</span>
+                  <span id="score-correct" class="score-value">0</span>
+                </div>
+                <div class="score-item score-streak">
+                  <span class="score-label" data-i18n="quiz.score.streak">Sequencia</span>
+                  <span id="score-streak" class="score-value">0</span>
+                </div>
+                <div class="score-item score-best">
+                  <span class="score-label" data-i18n="quiz.score.best">Recorde</span>
+                  <span id="score-best" class="score-value">0</span>
+                </div>
+                <div class="score-item score-wrong">
+                  <span class="score-label" data-i18n="quiz.score.wrong">Erros</span>
+                  <span id="score-wrong" class="score-value">0</span>
+                </div>
+              </header>
+
+              <div class="progress-row">
+                <span id="progress-text" class="progress-text">Pergunta 1</span>
+                <span id="mode-badge" class="mode-badge"></span>
+              </div>
+
+              <div id="auto-info" class="auto-info" hidden>
+                <div class="auto-bar-track"><div id="auto-bar" class="auto-bar"></div></div>
+                <div class="auto-info-row">
+                  <span id="auto-progress">0 / 0</span>
+                  <span id="auto-accuracy">100%</span>
+                </div>
+              </div>
+
+              <div id="timer-wrap" class="timer-wrap" hidden>
+                <div class="timer-head">
+                  <span data-i18n="quiz.time">Tempo</span>
+                  <span id="timer-seconds">10</span>
+                </div>
+                <div class="timer-track"><div id="timer-bar" class="timer-bar"></div></div>
+              </div>
+
+              <div id="question-card" class="question-card">
+                <div class="quote-mark">&#10077;</div>
+                <p id="question-text" class="question-text"></p>
+              </div>
+
+              <div id="feedback" class="feedback" aria-live="polite"></div>
+
+              <div class="answer-buttons">
+                <button id="btn-true" class="btn-answer btn-true" data-i18n="quiz.true">Verdade</button>
+                <button id="btn-false" class="btn-answer btn-false" data-i18n="quiz.false">Mentira</button>
+              </div>
+
+              <button id="btn-next" class="btn btn-primary btn-next" hidden data-i18n="quiz.next">Proxima &#8594;</button>
+
+              <div id="auto-wrong" class="auto-wrong" hidden>
+                <div class="auto-wrong-head"><span data-i18n="quiz.wrongList">Erradas</span> (<span id="auto-wrong-count">0</span>)</div>
+                <div id="auto-wrong-list" class="auto-wrong-list"></div>
+              </div>
+
+              <div class="bottom-actions">
+                <button id="btn-restart" class="btn btn-ghost" data-i18n="quiz.restart">Reiniciar placar</button>
+                <button id="btn-home" class="btn btn-ghost" data-i18n="quiz.menu">Menu</button>
+              </div>
+            </section>
+
+            <!-- TELA DE RESUMO -->
+            <section id="summary-screen" class="screen">
+              <h2 class="summary-title" data-i18n="quiz.summary.title">Resultado do Teste Automatico</h2>
+              <div class="summary-stats">
+                <div class="summary-stat">
+                  <span class="summary-num" id="summary-total">0</span>
+                  <span class="summary-lbl" data-i18n="quiz.summary.answered">Respondidas</span>
+                </div>
+                <div class="summary-stat ok">
+                  <span class="summary-num" id="summary-correct">0</span>
+                  <span class="summary-lbl" data-i18n="quiz.score.correct">Acertos</span>
+                </div>
+                <div class="summary-stat bad">
+                  <span class="summary-num" id="summary-wrong">0</span>
+                  <span class="summary-lbl" data-i18n="quiz.score.wrong">Erros</span>
+                </div>
+                <div class="summary-stat">
+                  <span class="summary-num" id="summary-accuracy">0%</span>
+                  <span class="summary-lbl" data-i18n="quiz.summary.accuracy">Precisao</span>
+                </div>
+              </div>
+              <div class="summary-actions">
+                <button id="btn-export-csv" class="btn btn-primary" data-i18n="quiz.summary.csv">Baixar CSV</button>
+                <button id="btn-export-json" class="btn btn-primary" data-i18n="quiz.summary.json">Baixar JSON</button>
+                <button id="btn-home-summary" class="btn btn-ghost" data-i18n="quiz.menu">Menu</button>
+              </div>
+              <h3 class="summary-sub"><span data-i18n="quiz.wrongList">Erradas</span> (<span id="summary-wrong-count">0</span>)</h3>
+              <div id="summary-wrong-list" class="search-results"></div>
+            </section>
+
+            <!-- TELA DE PESQUISA -->
+            <section id="search-screen" class="screen">
+              <h2 class="search-title" data-i18n="quiz.search.title">Pesquisar afirmacoes</h2>
+              <div class="search-box">
+                <span class="search-ico">&#128269;</span>
+                <input id="search-input" type="text" data-i18n-placeholder="quiz.search.placeholder" placeholder="Digite uma palavra (ex: Luffy, recompensa, Baratie)" autocomplete="off" />
+              </div>
+              <div class="search-legend">
+                <span class="legend-item"><span class="legend-dot dot-true"></span> <span data-i18n="quiz.search.true">Verdadeira</span></span>
+                <span class="legend-item"><span class="legend-dot dot-false"></span> <span data-i18n="quiz.search.false">Falsa</span></span>
+                <span id="search-count" class="search-count"></span>
+              </div>
+              <div id="search-results" class="search-results"></div>
+              <button id="btn-home-search" class="btn btn-ghost" data-i18n="quiz.menu">Menu</button>
+            </section>
+          </div>
+        </section>
+
+        <!-- ---------- SISTEMA DE BOOST ---------- -->
+        <section class="view" data-view="boost" id="view-boost">
+          <div class="boost-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.boost">Sistema de Boost</h1>
+              <p class="view-sub">
+                Guia completo das melhorias de equipamento e ferramentas para calcular
+                quantos materiais (e quanto dinheiro) voce vai gastar.
+              </p>
+            </div>
+
+            <!-- MELHORIA -->
+            <section id="melhoria" class="block">
+              <h2 class="block-title">Melhoria de Equipamento</h2>
+              <p class="lead">
+                A melhoria e representada por <strong>+1 a +16</strong> no nome do item e adiciona bonus
+                fixos nos atributos (nao altera os atributos base). Qualquer equipamento pode ser melhorado,
+                independentemente do nivel. Em varios conteudos, melhorar e <strong>obrigatorio</strong> para
+                entrar nas dificuldades Elite e Hard.
+              </p>
+              <h3 class="sub">Ferreiros</h3>
+              <p class="muted">Para melhorar ou aprimorar, fale com um dos ferreiros:</p>
+              <ul class="list">
+                <li><strong>Blacksmith (Alianca)</strong> - base da alianca. Concede <strong>desconto de 1 cristal</strong> por tentativa.</li>
+                <li><strong>Kenshirou</strong> - Rainbase (Alabasta West).</li>
+                <li><strong>Yukirou</strong> - Alubarna (Alabasta East).</li>
+                <li><strong>Calanthe</strong> - Amazon Lily.</li>
+                <li><strong>Masaki</strong> - Sabaody Archipelago.</li>
+              </ul>
+              <h3 class="sub">Cristais de Melhoria</h3>
+              <p class="muted">Cada faixa de melhoria usa um tipo de cristal, obtido em Wanted Pirates e Weekly Bosses:</p>
+              <div class="chip-row">
+                <span class="crystal sky">Cristal do Ceu <em>+1 a +4</em></span>
+                <span class="crystal sage">Cristal do Sabio <em>+5 a +8</em></span>
+                <span class="crystal crimson">Cristal Carmesim <em>+9 a +12</em></span>
+                <span class="crystal radiant">Cristal Radiante <em>+13 a +16</em></span>
+              </div>
+              <div class="callout">
+                <strong>Wanted Pirates &amp; bonus semanal:</strong> cada vitoria da 1 cristal. Ha um bonus
+                semanal de +2 cristais extras por vitoria, ate 30 cristais bonus por semana. Reseta toda
+                sexta-feira as 00h00 (UTC-3). Nas dificuldades Hard e Extreme, cada personagem recebe o bonus
+                uma vez por semana.
+              </div>
+              <h3 class="sub">Cristais por tentativa</h3>
+              <p class="muted">A quantidade gasta por tentativa depende do tipo de equipamento:</p>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Equipamento</th><th>Cristais por tentativa</th></tr></thead>
+                  <tbody>
+                    <tr><td>Cabeca</td><td>2 cristais</td></tr>
+                    <tr><td>Perna</td><td>2 cristais</td></tr>
+                    <tr><td>Emblema</td><td>2 cristais</td></tr>
+                    <tr><td>Corpo</td><td>4 cristais</td></tr>
+                    <tr><td>Arma</td><td>4 cristais</td></tr>
+                    <tr><td>Acessorio</td><td>4 cristais</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3 class="sub">Sistema de Garantia (Pity)</h3>
+              <p class="muted">
+                O sistema de garantia assegura o sucesso apos uma quantidade fixa de falhas consecutivas.
+                Chance de sucesso e a tentativa garantida por nivel:
+              </p>
+              <div class="table-wrap">
+                <table id="pity-table">
+                  <thead><tr><th>Melhoria</th><th>Chance de Sucesso</th><th>Tentativa Garantida</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <h3 class="sub">Pergaminhos de Melhoria</h3>
+              <p class="muted">Adicionam uma porcentagem fixa e unica a chance da tentativa (consumidos na hora):</p>
+              <div class="chip-row">
+                <span class="scroll">Pergaminho Basico <em>+3%</em></span>
+                <span class="scroll">Pergaminho Avancado <em>+5%</em></span>
+                <span class="scroll">Pergaminho Superior <em>+30%</em></span>
+              </div>
+              <p class="muted small">Obtidos nos Weekly Bosses ou na Raid de Enies Lobby.</p>
+              <h3 class="sub">Transferencia de Melhoria</h3>
+              <p class="muted">
+                E possivel transferir a melhoria de um item para outro usando <strong>gemas</strong>. Os dois
+                equipamentos precisam ter o <strong>mesmo nivel</strong>. Custo em gemas por tipo:
+              </p>
+              <div class="table-wrap">
+                <table id="transfer-table">
+                  <thead><tr><th>Melhoria</th><th>Cabeca</th><th>Corpo</th><th>Perna</th><th>Emblema</th><th>Arma</th><th>Acessorio</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <h3 class="sub">Reembolso de Cristais</h3>
+              <p class="muted">
+                Recupera parte dos cristais usados em um equipamento antigo. Quanto maior a categoria do
+                cristal, menor a quantidade devolvida. Valores por tipo de equipamento (item totalmente +16):
+              </p>
+              <div class="table-wrap">
+                <table id="refund-table">
+                  <thead><tr><th>Cristal</th><th>Cabeca</th><th>Corpo</th><th>Perna</th><th>Emblema</th><th>Arma</th><th>Acessorio</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- APRIMORAMENTO -->
+            <section id="aprimoramento" class="block">
+              <h2 class="block-title">Aprimoramento de Equipamento</h2>
+              <p class="lead">
+                Os atributos <strong>base</strong> podem ser aprimorados com o <strong>Cristal Divino</strong>,
+                obtido nas Raids de Skypiea e Enies Lobby ou em conquistas do One Man Army. Afeta Ataque,
+                Defesa, Vitalidade e Penetracao de Ataque. Resistencia Critica, Sorte e Experiencia nao sao
+                aprimorados.
+              </p>
+              <h3 class="sub">Valor por categoria (por Cristal Divino)</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Cabeca</th><th>Corpo</th><th>Perna</th><th>Emblema</th><th>Arma</th><th>Acessorio</th></tr></thead>
+                  <tbody>
+                    <tr>
+                      <td>+1 VIT / +15 DEF</td>
+                      <td>+1 VIT / +40 DEF</td>
+                      <td>+1 VIT / +30 DEF</td>
+                      <td>+35 PEN</td>
+                      <td>+80 ATK</td>
+                      <td>+1 CRIT / +30 ATK</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3 class="sub">Atributos maximos (raridade Lendaria)</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Cabeca</th><th>Corpo</th><th>Perna</th><th>Emblema</th><th>Arma</th><th>Colar</th><th>Anel</th></tr></thead>
+                  <tbody>
+                    <tr>
+                      <td>VIT 59 / DEF 499</td>
+                      <td>VIT 73 / DEF 2460</td>
+                      <td>VIT 14 / DEF 1996</td>
+                      <td>PEN 2755</td>
+                      <td>ATK 8600</td>
+                      <td>ATK 5400</td>
+                      <td>CRIT 135 / ATK 1650</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- REFORJA -->
+            <section id="reforja" class="block">
+              <h2 class="block-title">Sistema de Reforja</h2>
+              <p class="lead">
+                Permite <strong>sortear novos atributos base</strong> usando materiais especificos. Disponivel
+                nos ferreiros da Alianca e na Calanthe. Apenas itens vinculados a conta e de <strong>nivel
+                140</strong> podem ser reforjados. O material e consumido a cada tentativa, mesmo que voce
+                mantenha os atributos antigos.
+              </p>
+              <div class="split">
+                <div class="mini-card">
+                  <h3 class="sub">Reforja de Armas</h3>
+                  <p class="muted small">Consome 1 <span class="crystal chaotic">Cristal Caotico</span> por tentativa.</p>
+                  <ul class="list small">
+                    <li>Comum: <strong>80%</strong></li>
+                    <li>Rara: <strong>17%</strong></li>
+                    <li>Epica: <strong>3%</strong></li>
+                  </ul>
+                </div>
+                <div class="mini-card">
+                  <h3 class="sub">Reforja de Equipamentos</h3>
+                  <p class="muted small">Consome 1 <span class="crystal distorted">Cristal Deturpado</span> por tentativa.</p>
+                  <ul class="list small">
+                    <li>Comum: <strong>15%</strong></li>
+                    <li>Rara: <strong>75%</strong></li>
+                    <li>Epica: <strong>10%</strong></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="callout">
+                <strong>Materiais:</strong> fabricados na Loja de Medalhas de Valentia (Mercado Negro).
+                Fragmento Caotico vem da Raid de Skypiea/Enies Lobby (Hard) e Fragmento Deturpado dos Bosses
+                Semanais (Hard).
+              </div>
+            </section>
+
+            <!-- FERRAMENTAS -->
+            <section id="ferramentas" class="block">
+              <h2 class="block-title">Ferramentas</h2>
+
+              <div class="tool" id="precos">
+                <h3 class="tool-title">Precos dos materiais</h3>
+                <p class="muted small">
+                  Defina o preco que voce considera para cada material. Esses valores alimentam as
+                  calculadoras abaixo e ficam salvos no seu perfil.
+                </p>
+                <div class="field">
+                  <label for="currency">Nome da moeda</label>
+                  <input id="currency" type="text" value="gemas" />
+                </div>
+                <div class="price-grid">
+                  <div class="price-cell"><span class="crystal sky">Cristal do Ceu</span><input id="price-sky" type="number" min="0" step="any" value="0" /></div>
+                  <div class="price-cell"><span class="crystal sage">Cristal do Sabio</span><input id="price-sage" type="number" min="0" step="any" value="0" /></div>
+                  <div class="price-cell"><span class="crystal crimson">Cristal Carmesim</span><input id="price-crimson" type="number" min="0" step="any" value="0" /></div>
+                  <div class="price-cell"><span class="crystal radiant">Cristal Radiante</span><input id="price-radiant" type="number" min="0" step="any" value="0" /></div>
+                  <div class="price-cell"><span class="crystal chaotic">Cristal Caotico</span><input id="price-chaotic" type="number" min="0" step="any" value="0" /></div>
+                  <div class="price-cell"><span class="crystal distorted">Cristal Deturpado</span><input id="price-distorted" type="number" min="0" step="any" value="0" /></div>
+                </div>
+              </div>
+
+              <div class="tool" id="calc-melhoria">
+                <h3 class="tool-title">Calculadora de Melhoria</h3>
+                <p class="muted small">Estime os cristais e o custo para levar um equipamento do nivel atual ate o nivel alvo.</p>
+                <div class="field full">
+                  <label>Pecas do conjunto (mesmo nivel)</label>
+                  <div class="check-group" id="m-items">
+                    <label><input type="checkbox" name="m-item" value="cabeca" checked /> Cabeca <em>2/tent.</em></label>
+                    <label><input type="checkbox" name="m-item" value="perna" /> Perna <em>2/tent.</em></label>
+                    <label><input type="checkbox" name="m-item" value="emblema" /> Emblema <em>2/tent.</em></label>
+                    <label><input type="checkbox" name="m-item" value="corpo" /> Corpo <em>4/tent.</em></label>
+                    <label><input type="checkbox" name="m-item" value="arma" /> Arma <em>4/tent.</em></label>
+                    <label><input type="checkbox" name="m-item" value="acessorio" /> Acessorio <em>4/tent.</em></label>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <div class="field"><label for="m-from">Nivel atual</label><select id="m-from"></select></div>
+                  <div class="field"><label for="m-to">Nivel alvo</label><select id="m-to"></select></div>
+                  <div class="field">
+                    <label for="m-mode">Estimativa</label>
+                    <select id="m-mode">
+                      <option value="expected">Media esperada</option>
+                      <option value="worst">Pior caso (garantia)</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="m-scroll">Pergaminho</label>
+                    <select id="m-scroll">
+                      <option value="0">Nenhum</option>
+                      <option value="3">Basico (+3%)</option>
+                      <option value="5">Avancado (+5%)</option>
+                      <option value="30">Superior (+30%)</option>
+                    </select>
+                  </div>
+                  <div class="field check">
+                    <label><input id="m-alliance" type="checkbox" /> Ferreiro da Alianca (-1 cristal/tentativa)</label>
+                  </div>
+                </div>
+                <div id="m-result" class="result" aria-live="polite"></div>
+              </div>
+
+              <div class="tool" id="calc-transfer">
+                <h3 class="tool-title">Custo de Transferencia (gemas)</h3>
+                <p class="muted small">A transferencia troca a melhoria entre dois itens de mesmo nivel.</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="t-item">Tipo de equipamento</label>
+                    <select id="t-item">
+                      <option value="cabeca">Cabeca</option>
+                      <option value="corpo">Corpo</option>
+                      <option value="perna">Perna</option>
+                      <option value="emblema">Emblema</option>
+                      <option value="arma">Arma</option>
+                      <option value="acessorio">Acessorio</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="t-level">Nivel de melhoria</label>
+                    <select id="t-level">
+                      <option value="4">+4</option>
+                      <option value="8">+8</option>
+                      <option value="12">+12</option>
+                      <option value="16">+16</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="t-result" class="result" aria-live="polite"></div>
+              </div>
+
+              <div class="tool" id="calc-refund">
+                <h3 class="tool-title">Reembolso de Cristais</h3>
+                <p class="muted small">Cristais devolvidos ao reembolsar um item totalmente melhorado (+16).</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="r-item">Tipo de equipamento</label>
+                    <select id="r-item">
+                      <option value="cabeca">Cabeca</option>
+                      <option value="corpo">Corpo</option>
+                      <option value="perna">Perna</option>
+                      <option value="emblema">Emblema</option>
+                      <option value="arma">Arma</option>
+                      <option value="acessorio">Acessorio</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="r-result" class="result" aria-live="polite"></div>
+              </div>
+
+              <div class="tool" id="calc-reforge">
+                <h3 class="tool-title">Calculadora de Reforja</h3>
+                <p class="muted small">Estima quantas tentativas (em media) ate sortear a raridade desejada e o custo total.</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="rf-type">O que reforjar</label>
+                    <select id="rf-type">
+                      <option value="weapon">Arma (Cristal Caotico)</option>
+                      <option value="gear">Equipamento (Cristal Deturpado)</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="rf-rarity">Raridade desejada</label>
+                    <select id="rf-rarity">
+                      <option value="comum">Comum</option>
+                      <option value="rara">Rara</option>
+                      <option value="epica">Epica</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="rf-result" class="result" aria-live="polite"></div>
+              </div>
+
+              <div class="tool" id="calc-gemas">
+                <h3 class="tool-title">Compra Coletiva de Gemas</h3>
+                <p class="muted small">
+                  Junte o dinheiro de todos em uma so compra para alcancar uma faixa de preco melhor.
+                  Informe quanto cada amigo vai colocar e veja quantas gemas cada um recebe
+                  proporcionalmente.
+                </p>
+                <div class="split">
+                  <div class="mini-card">
+                    <h4 class="mini-title">Preco por gema (site)</h4>
+                    <div class="table-wrap">
+                      <table>
+                        <thead><tr><th>Gemas</th><th>Preco</th></tr></thead>
+                        <tbody>
+                          <tr><td>1 a 99</td><td>R$ 0,97</td></tr>
+                          <tr><td>100 a 199</td><td>R$ 0,95</td></tr>
+                          <tr><td>200 ou mais</td><td>R$ 0,90</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="muted small">+ 2,5% de cashback (volta em dinheiro).</p>
+                  </div>
+                  <div class="mini-card">
+                    <h4 class="mini-title">App (1 gema = R$ 1 + bonus)</h4>
+                    <div class="table-wrap">
+                      <table>
+                        <thead><tr><th>Compra</th><th>Bonus</th><th>Melhor</th></tr></thead>
+                        <tbody>
+                          <tr><td>Ate R$ 100</td><td>0%</td><td><span class="gain-pos">Site</span></td></tr>
+                          <tr><td>R$ 100+</td><td>+5%</td><td><span class="gain-pos">Site</span></td></tr>
+                          <tr><td>R$ 200+</td><td>+10%</td><td><span class="gain-pos">Site</span></td></tr>
+                          <tr><td>R$ 400+</td><td>+15%</td><td><span class="gain-neg">App</span></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="muted small">Site vende a gema mais barata: so vale o app a partir de R$ 400 (+15%).</p>
+                  </div>
+                </div>
+                <div id="g-friends" class="friends"></div>
+                <button id="g-add" type="button" class="btn btn-add">+ Adicionar amigo</button>
+                <div id="g-result" class="result" aria-live="polite"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="page-footer">
+        <span data-i18n="footer.made">Ferramentas da comunidade para</span>
+        <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Grand Line Adventures</a>.
+        &middot; <a href="https://wiki.gla.com.br" target="_blank" rel="noopener">Wiki GLA</a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL DE PERFIS ===================== -->
+  <div class="modal" id="profile-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 class="modal-title" data-i18n="profile.title">Perfis</h2>
+        <button class="modal-close" id="profile-close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="profile-list" id="profile-list"></div>
+
+      <div class="form-row">
+        <label class="field" data-i18n="profile.name">Nome</label>
+        <div class="form-inline">
+          <div class="field" style="flex:2">
+            <input id="profile-name-input" type="text" data-i18n-placeholder="profile.namePh" placeholder="Nome do perfil" />
+          </div>
+          <div class="field" style="width:70px">
+            <input id="profile-emoji-input" type="text" maxlength="2" value="&#128100;" />
+          </div>
+          <div class="field" style="width:56px">
+            <input id="profile-color-input" type="color" value="#e8c468" />
+          </div>
+        </div>
+        <p class="hint" data-i18n="profile.hint">Cada perfil guarda separadamente seu recorde do quiz e os precos do boost.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="profile-new" data-i18n="profile.new">Novo</button>
+        <button class="btn btn-add" id="profile-create" data-i18n="profile.create">Criar / Salvar</button>
+        <button class="btn btn-ghost" id="profile-export" data-i18n="profile.export">Exportar</button>
+        <button class="btn btn-ghost" id="profile-import" data-i18n="profile.import">Importar</button>
+        <button class="btn btn-ghost" id="profile-share" data-i18n="profile.share">Copiar link</button>
+        <button class="btn btn-danger" id="profile-delete" data-i18n="profile.delete">Deletar ativo</button>
+      </div>
+      <input id="profile-file" type="file" accept="application/json" hidden />
+      <div class="status-msg" id="profile-status"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="assets/data/questions.js"></script>
+  <script src="assets/data/boost-tables.js"></script>
+  <script src="assets/i18n/pt-BR.js"></script>
+  <script src="assets/i18n/en.js"></script>
+  <script src="assets/js/core/storage.js"></script>
+  <script src="assets/js/core/i18n.js"></script>
+  <script src="assets/js/core/profiles.js"></script>
+  <script src="assets/js/core/router.js"></script>
+  <script src="assets/js/features/quiz.js"></script>
+  <script src="assets/js/features/boost.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
