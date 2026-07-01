@@ -1,0 +1,81 @@
+/* =========================================================
+   xp.css - Calculadora de pots de XP
+   Reaproveita .tool, .field, .form-grid, .result de boost/components.
+   ========================================================= */
+
+.xp-wrap { max-width: 720px; margin: 0 auto; }
+
+.xp-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+.xp-tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(7, 19, 36, 0.4);
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, transform 0.12s, color 0.18s;
+}
+.xp-tier-btn:hover { border-color: var(--gold); transform: translateY(-2px); }
+.xp-tier-btn img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+.xp-tier-btn.active {
+  border-color: var(--gold);
+  background: rgba(232, 196, 104, 0.14);
+  color: var(--gold-soft);
+  box-shadow: 0 0 0 1px var(--gold) inset;
+}
+
+.xp-actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.xp-pot-lines {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.xp-pot-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 196, 104, 0.25);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+}
+.xp-pot-line img { width: 34px; height: 34px; object-fit: contain; flex-shrink: 0; }
+.xp-pot-line strong { color: var(--gold-soft); font-variant-numeric: tabular-nums; }
+
+.xp-note {
+  color: var(--text-dim);
+  font-size: 14px;
+  padding: 4px 2px;
+}
+.xp-error {
+  color: var(--red);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 4px 2px;
+}
+
+.xp-credit { margin-top: 16px; text-align: center; opacity: 0.8; }
+.xp-credit a { color: var(--gold); }
+
+@media (max-width: 520px) {
+  .xp-tiers { grid-template-columns: repeat(2, 1fr); }
+}

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="assets/css/features/quiz.css" />
   <link rel="stylesheet" href="assets/css/features/boost.css" />
   <link rel="stylesheet" href="assets/css/features/wiki.css" />
+  <link rel="stylesheet" href="assets/css/features/xp.css" />
+  <link rel="stylesheet" href="assets/css/features/wanted.css" />
 </head>
 <body>
   <div class="ocean"></div>
@@ -53,17 +55,17 @@
         <div class="nav-group-title" data-i18n="nav.tools">Ferramentas</div>
         <ul class="nav-list">
           <li><a class="nav-link" data-nav="quiz"><span class="nav-ico">&#129418;</span><span data-i18n="nav.quiz">Foxy Quiz</span></a></li>
+          <li><a class="nav-link" data-nav="xp"><span class="nav-ico">&#128202;</span><span data-i18n="nav.xp">Calculadora de XP</span></a></li>
           <li><a class="nav-link" data-nav="boost"><span class="nav-ico">&#9874;</span><span data-i18n="nav.boost">Sistema de Boost</span></a></li>
           <li><a class="nav-link" data-nav="wiki"><span class="nav-ico">&#128214;</span><span data-i18n="nav.wiki">Wiki</span></a></li>
+          <li><a class="nav-link" data-nav="wanted"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span></a></li>
         </ul>
       </nav>
 
       <nav class="nav-group">
         <div class="nav-group-title" data-i18n="nav.soon">Em breve</div>
         <ul class="nav-list">
-          <li><a class="nav-link disabled"><span class="nav-ico">&#128202;</span><span data-i18n="nav.xp">Calculadora de XP</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
           <li><a class="nav-link disabled"><span class="nav-ico">&#128674;</span><span data-i18n="nav.boats">Planejador de Barcos</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
-          <li><a class="nav-link disabled"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
           <li><a class="nav-link disabled"><span class="nav-ico">&#128203;</span><span data-i18n="nav.tracker">Tracker Semanal</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
         </ul>
       </nav>
@@ -91,17 +93,21 @@
               <h3 data-i18n="nav.boost">Sistema de Boost</h3>
               <p data-i18n="home.boostDesc">Guia de melhoria, aprimoramento e reforja, com calculadoras de custo em cristais e gemas.</p>
             </a>
+            <a class="feature-card" data-nav="wanted">
+              <span class="fc-icon">&#9760;</span>
+              <h3 data-i18n="nav.wanted">Wanted Pirates</h3>
+              <p data-i18n="home.wantedDesc">Counters recomendados para cada Wanted Pirate, com sprites e busca.</p>
+            </a>
             <a class="feature-card" data-nav="wiki">
               <span class="fc-icon">&#128214;</span>
               <h3 data-i18n="nav.wiki">Wiki</h3>
               <p data-i18n="home.wikiDesc">Parte informativa do boost: melhoria, aprimoramento, reforja e tabelas de referencia.</p>
             </a>
-            <span class="feature-card soon">
+            <a class="feature-card" data-nav="xp">
               <span class="fc-icon">&#128202;</span>
               <h3 data-i18n="nav.xp">Calculadora de XP</h3>
               <p data-i18n="home.xpDesc">Descubra quantas pocoes de XP faltam para o nivel desejado.</p>
-              <span class="fc-tag" data-i18n="badge.soon">Soon</span>
-            </span>
+            </a>
             <span class="feature-card soon">
               <span class="fc-icon">&#128674;</span>
               <h3 data-i18n="nav.boats">Planejador de Barcos</h3>
@@ -271,6 +277,53 @@
               <div id="search-results" class="search-results"></div>
               <button id="btn-home-search" class="btn btn-ghost" data-i18n="quiz.menu">Menu</button>
             </section>
+          </div>
+        </section>
+
+        <!-- ---------- CALCULADORA DE XP ---------- -->
+        <section class="view" data-view="xp" id="view-xp">
+          <div class="xp-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.xp">Calculadora de XP</h1>
+              <p class="view-sub" data-i18n="xp.sub">Calcule quantas pocoes de XP faltam para levar um personagem ate o nivel desejado, conforme o tier.</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title" data-i18n="xp.tierTitle">Tier do personagem</h3>
+              <p class="muted small" data-i18n="xp.tierHint">Quanto maior o tier, mais XP o personagem precisa (os pots rendem menos).</p>
+              <div class="xp-tiers" id="xp-tiers"></div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="xp-level-current" data-i18n="xp.levelCurrent">Nivel atual</label>
+                  <input id="xp-level-current" type="number" min="1" max="140" step="1" value="1" />
+                </div>
+                <div class="field">
+                  <label for="xp-percent-current" data-i18n="xp.percentCurrent">XP atual (%)</label>
+                  <input id="xp-percent-current" type="number" min="0" max="100" step="any" value="0" />
+                </div>
+                <div class="field">
+                  <label for="xp-level-target" data-i18n="xp.levelTarget">Nivel desejado</label>
+                  <input id="xp-level-target" type="number" min="2" max="140" step="1" value="140" />
+                </div>
+              </div>
+
+              <div class="xp-actions">
+                <button id="xp-clear-btn" class="btn btn-ghost" data-i18n="xp.clear">Limpar</button>
+              </div>
+
+              <div id="xp-result" class="result" aria-live="polite">
+                <div id="xp-result-note" class="xp-note"></div>
+                <div id="xp-result-list" class="xp-pot-lines"></div>
+              </div>
+            </div>
+
+            <p class="muted small xp-credit" data-i18n-html="xp.credit">
+              Formulas e sprites de XP baseados no
+              <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Labophase</a>
+              (sprites: Drakantos GLA).
+            </p>
           </div>
         </section>
 
@@ -650,6 +703,36 @@
           </div>
         </section>
 
+        <!-- ---------- WANTED PIRATES ---------- -->
+        <section class="view" data-view="wanted" id="view-wanted">
+          <div class="wanted-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.wanted">Wanted Pirates</h1>
+              <p class="view-sub" data-i18n="wanted.sub">Counters recomendados para cada Wanted Pirate. Pesquise pelo nome do alvo.</p>
+            </div>
+
+            <div class="wanted-toolbar">
+              <div class="wanted-search-box">
+                <span class="search-ico">&#128269;</span>
+                <input id="wanted-search" type="text" data-i18n-placeholder="wanted.searchPh" placeholder="Pesquisar Wanted Pirate" autocomplete="off" />
+              </div>
+              <div class="wanted-sort">
+                <button id="wanted-sort-original" class="btn btn-ghost" data-i18n="wanted.sortOriginal">Original</button>
+                <button id="wanted-sort-az" class="btn btn-ghost" data-i18n="wanted.sortAz">A-Z</button>
+              </div>
+              <span id="wanted-count" class="wanted-count"></span>
+            </div>
+
+            <div id="wanted-list" class="wanted-list"></div>
+
+            <p class="muted small wanted-credit" data-i18n-html="wanted.credit">
+              Match-ups por ThePlayerLost. Sprites: Drakantos GLA, via
+              <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Labophase</a>.
+            </p>
+          </div>
+        </section>
+
       </div>
 
       <footer class="page-footer">
@@ -701,6 +784,7 @@
   <!-- ===================== SCRIPTS ===================== -->
   <script src="assets/data/questions.js"></script>
   <script src="assets/data/boost-tables.js"></script>
+  <script src="assets/data/wanted-data.js"></script>
   <script src="assets/i18n/pt-BR.js"></script>
   <script src="assets/i18n/en.js"></script>
   <script src="assets/js/core/storage.js"></script>
@@ -710,6 +794,8 @@
   <script src="assets/js/features/quiz.js"></script>
   <script src="assets/js/features/boost.js"></script>
   <script src="assets/js/features/wiki.js"></script>
+  <script src="assets/js/features/xp.js"></script>
+  <script src="assets/js/features/wanted.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

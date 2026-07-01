@@ -1,0 +1,138 @@
+/* =========================================================
+   wanted.css - Wanted Pirates (match-ups / counters)
+   ========================================================= */
+
+.wanted-wrap { max-width: 980px; margin: 0 auto; }
+
+.wanted-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.wanted-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 240px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0 14px;
+}
+.wanted-search-box:focus-within { border-color: var(--gold); }
+.wanted-search-box .search-ico { font-size: 16px; color: var(--text-dim); }
+#wanted-search {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 0;
+}
+#wanted-search::placeholder { color: var(--text-dim); }
+
+.wanted-sort { display: flex; gap: 6px; }
+.wanted-sort .btn { padding: 9px 14px; font-size: 13px; }
+.wanted-sort .btn.active {
+  background: rgba(232, 196, 104, 0.16);
+  border-color: var(--gold);
+  color: var(--gold-soft);
+}
+.wanted-count { color: var(--gold); font-weight: 600; font-size: 13px; }
+
+.wanted-list { display: flex; flex-direction: column; gap: 12px; }
+
+.wanted-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: var(--shadow);
+}
+.wanted-head { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.wanted-arrow { color: var(--gold); font-size: 20px; opacity: 0.7; }
+.wanted-counters { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 auto; }
+
+.wanted-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 5px 12px 5px 5px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.wanted-chip.is-wanted {
+  background: rgba(239, 93, 93, 0.12);
+  border-color: rgba(239, 93, 93, 0.4);
+  padding: 6px 14px 6px 6px;
+}
+.wanted-chip.is-wanted .wanted-name { color: #ffd7d7; font-family: "Cinzel", serif; font-size: 15px; }
+
+/* Top 3 counters: 1o ouro, 2o prata, 3o bronze */
+.wanted-chip.rank-1 {
+  background: rgba(232, 196, 104, 0.20);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(232, 196, 104, 0.35) inset;
+}
+.wanted-chip.rank-1 .wanted-name { color: var(--gold-soft); }
+.wanted-chip.rank-1 .wanted-avatar { border-color: var(--gold); }
+
+.wanted-chip.rank-2 {
+  background: rgba(197, 208, 222, 0.18);
+  border-color: rgba(197, 208, 222, 0.6);
+  box-shadow: 0 0 0 1px rgba(197, 208, 222, 0.28) inset;
+}
+.wanted-chip.rank-2 .wanted-name { color: #e6edf6; }
+.wanted-chip.rank-2 .wanted-avatar { border-color: rgba(197, 208, 222, 0.7); }
+
+.wanted-chip.rank-3 {
+  background: rgba(205, 127, 50, 0.20);
+  border-color: rgba(205, 127, 50, 0.6);
+  box-shadow: 0 0 0 1px rgba(205, 127, 50, 0.3) inset;
+}
+.wanted-chip.rank-3 .wanted-name { color: #f0c9a0; }
+.wanted-chip.rank-3 .wanted-avatar { border-color: rgba(205, 127, 50, 0.7); }
+
+.wanted-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 19, 36, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.wanted-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.wanted-avatar.missing {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--gold-soft);
+  background: rgba(232, 196, 104, 0.15);
+}
+.wanted-chip.is-wanted .wanted-avatar { width: 40px; height: 40px; border-color: rgba(239, 93, 93, 0.5); }
+
+.wanted-empty { text-align: center; color: var(--text-dim); padding: 30px 8px; }
+
+.wanted-credit { margin-top: 18px; text-align: center; opacity: 0.8; }
+.wanted-credit a { color: var(--gold); }
+
+@media (max-width: 640px) {
+  .wanted-card { gap: 10px; }
+  .wanted-head { width: 100%; }
+  .wanted-arrow { display: none; }
+  .wanted-chip .wanted-name { font-size: 12.5px; }
+}

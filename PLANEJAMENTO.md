@@ -123,18 +123,24 @@ GLA_Helper/
 ## Roadmap (features futuras, inspiradas no Labophase)
 
 Cada item novo entra como uma `view` propria + um modulo em
-`assets/js/features/` + um item na sidebar. Prioridade sugerida:
+`assets/js/features/` + um item na sidebar.
 
-1. **Calculadora de XP** - pocoes necessarias por nivel/tier.
+Ja implementadas alem do escopo inicial:
+- **Wiki do Boost** - parte informativa do boost (melhoria, aprimoramento, reforja e tabelas).
+- **Calculadora de XP** - pots necessarios por nivel/tier (formulas e sprites baseados no Labophase; sprites por Drakantos GLA, em `assets/img/xp/`).
+- **Wanted Pirates (match-ups)** - counters recomendados por alvo, com busca e ordenacao. Dados: ThePlayerLost. Sprites de personagens em `assets/img/characters/` (Drakantos GLA, via Labophase). Falta ainda o montador de tiers com drag-and-drop e "salvar imagem" (ver abaixo).
+
+Prioridade sugerida para as proximas:
+
+1. **Wanted - Pool de Counters (tier builder)** - montar tiers arrastando personagens e exportar imagem.
 2. **Planejador de Barcos** - arsenal, skins, materiais e custo em berries.
-3. **Wanted Pirates** - match-ups e pool de counters.
-4. **Tracker Semanal** - Boss Rush, Marineford, eventos Foxy, One Man Army.
-5. **Bau Semanal** - rotacao de baus por semana.
-6. **Tierlist** - montagem e compartilhamento de tierlists.
-7. **Personagens** - lista com nivel/estrelas/tier e filtros.
-8. **World / Weekly Bosses** e **Marineford** - fases, habilidades e recompensas.
-9. **Island Chests** - baus por ilha.
-10. **Links Uteis** - links oficiais e da comunidade.
+3. **Tracker Semanal** - Boss Rush, Marineford, eventos Foxy, One Man Army.
+4. **Bau Semanal** - rotacao de baus por semana.
+5. **Tierlist** - montagem e compartilhamento de tierlists.
+6. **Personagens** - lista com nivel/estrelas/tier e filtros.
+7. **World / Weekly Bosses** e **Marineford** - fases, habilidades e recompensas.
+8. **Island Chests** - baus por ilha.
+9. **Links Uteis** - links oficiais e da comunidade.
 
 ### Melhorias transversais (quando fizer sentido)
 - Adicionar idiomas `es` e `pl` (novos arquivos em `assets/i18n/`).

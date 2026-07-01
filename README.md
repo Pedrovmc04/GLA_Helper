@@ -10,6 +10,11 @@ por sidebar, sistema de perfis e multi-idioma (pt-BR / en).
   Tempo, Pesquisa (gabarito) e Auto / Teste (relatorio em CSV/JSON).
 - **Sistema de Boost** - guia de melhoria, aprimoramento e reforja, com
   calculadoras de custo em cristais e gemas e comparador de compra de gemas.
+- **Calculadora de XP** - quantos pots de XP faltam para o nivel desejado,
+  conforme o tier do personagem.
+- **Wanted Pirates** - counters recomendados para cada Wanted Pirate, com
+  sprites e busca (match-ups por ThePlayerLost).
+- **Wiki** - a parte informativa do boost (tabelas de referencia).
 
 Mais ferramentas estao planejadas em [PLANEJAMENTO.md](PLANEJAMENTO.md).
 
