@@ -59,32 +59,6 @@ window.GLA = window.GLA || {};
     return e;
   }
 
-  // ---- Tabelas estaticas ----
-  function renderPityTable() {
-    var tbody = document.querySelector("#pity-table tbody");
-    tbody.innerHTML = D.PITY.map(function (row) {
-      var tier = tierForLevel(row.level);
-      return "<tr><td><span class=\"crystal " + tier.cls + "\">+" + row.level + "</span></td><td>" +
-        row.chance + "%</td><td>" + row.guaranteed + "a tentativa</td></tr>";
-    }).join("");
-  }
-  function renderTransferTable() {
-    var tbody = document.querySelector("#transfer-table tbody");
-    var order = ["cabeca", "corpo", "perna", "emblema", "arma", "acessorio"];
-    tbody.innerHTML = Object.keys(D.TRANSFER).map(function (lvl) {
-      var cells = order.map(function (k) { return "<td>" + D.TRANSFER[lvl][k] + " gemas</td>"; }).join("");
-      return "<tr><td><strong>+" + lvl + "</strong></td>" + cells + "</tr>";
-    }).join("");
-  }
-  function renderRefundTable() {
-    var tbody = document.querySelector("#refund-table tbody");
-    var order = ["cabeca", "corpo", "perna", "emblema", "arma", "acessorio"];
-    tbody.innerHTML = D.CRYSTAL_TIERS.map(function (t) {
-      var cells = order.map(function (k) { return "<td>" + D.REFUND[t.key][k] + "</td>"; }).join("");
-      return "<tr><td><span class=\"crystal " + t.cls + "\">" + t.label + "</span></td>" + cells + "</tr>";
-    }).join("");
-  }
-
   function fillLevelSelects() {
     var from = $("m-from"), to = $("m-to");
     var fromHtml = "", toHtml = "";
@@ -325,9 +299,6 @@ window.GLA = window.GLA || {};
 
   function init() {
     if (!D) { console.error("BOOST_DATA nao carregado"); return; }
-    renderPityTable();
-    renderTransferTable();
-    renderRefundTable();
     fillLevelSelects();
 
     var priceIds = ["currency", "price-sky", "price-sage", "price-crimson", "price-radiant", "price-chaotic", "price-distorted"];

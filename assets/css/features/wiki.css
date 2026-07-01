@@ -1,0 +1,7 @@
+/* =========================================================
+   wiki.css - Wiki do Boost (parte informativa)
+   Reaproveita os componentes definidos em boost.css
+   (.block, .crystal, .scroll, .split, .mini-card, .lead, .sub, .list).
+   ========================================================= */
+
+.wiki-wrap { max-width: 900px; margin: 0 auto; }

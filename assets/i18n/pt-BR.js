@@ -6,6 +6,7 @@ window.GLA_I18N["pt-BR"] = {
   "nav.tools": "Ferramentas",
   "nav.quiz": "Foxy Quiz",
   "nav.boost": "Sistema de Boost",
+  "nav.wiki": "Wiki",
   "nav.soon": "Em breve",
   "nav.xp": "Calculadora de XP",
   "nav.boats": "Planejador de Barcos",
@@ -17,6 +18,10 @@ window.GLA_I18N["pt-BR"] = {
   "home.sub": "Ferramentas da comunidade para te ajudar no jogo. Escolha uma ferramenta ao lado ou abaixo.",
   "home.quizDesc": "Treine as afirmacoes de Verdade ou Mentira, pesquise o gabarito e rode testes automaticos.",
   "home.boostDesc": "Guia de melhoria, aprimoramento e reforja, com calculadoras de custo em cristais e gemas.",
+  "home.wikiDesc": "Parte informativa do boost: melhoria, aprimoramento, reforja e tabelas de referencia.",
+  "wiki.title": "Wiki do Boost",
+  "wiki.sub": "Guia informativo das melhorias de equipamento: melhoria, aprimoramento e reforja, com tabelas de cristais, garantia (pity), transferencia e reembolso.",
+  "boost.sub": "Calculadoras de custo em cristais e gemas. Precisa da parte teorica? Consulte a Wiki do Boost.",
   "home.xpDesc": "Descubra quantas pocoes de XP faltam para o nivel desejado.",
   "home.boatsDesc": "Materiais, refino e custo em berries para arsenal e skins do navio.",
 

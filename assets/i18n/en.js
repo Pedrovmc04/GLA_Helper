@@ -6,6 +6,7 @@ window.GLA_I18N["en"] = {
   "nav.tools": "Tools",
   "nav.quiz": "Foxy Quiz",
   "nav.boost": "Boost System",
+  "nav.wiki": "Wiki",
   "nav.soon": "Coming soon",
   "nav.xp": "XP Calculator",
   "nav.boats": "Boat Planner",
@@ -17,6 +18,10 @@ window.GLA_I18N["en"] = {
   "home.sub": "Community tools to help you in the game. Pick a tool from the sidebar or below.",
   "home.quizDesc": "Practice the True or False statements, search the answer key and run automated tests.",
   "home.boostDesc": "Upgrade, enhance and reforge guide, with crystal and gem cost calculators.",
+  "home.wikiDesc": "The informative part of boost: upgrade, enhance, reforge and reference tables.",
+  "wiki.title": "Boost Wiki",
+  "wiki.sub": "Informative guide to equipment upgrades: upgrade, enhance and reforge, with tables for crystals, guarantee (pity), transfer and refund.",
+  "boost.sub": "Crystal and gem cost calculators. Need the theory? Check the Boost Wiki.",
   "home.xpDesc": "Find out how many XP potions you need to reach the desired level.",
   "home.boatsDesc": "Materials, refining and berry cost for the ship arsenal and skins.",
 

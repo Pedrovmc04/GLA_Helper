@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/features/quiz.css" />
   <link rel="stylesheet" href="assets/css/features/boost.css" />
+  <link rel="stylesheet" href="assets/css/features/wiki.css" />
 </head>
 <body>
   <div class="ocean"></div>
@@ -53,6 +54,7 @@
         <ul class="nav-list">
           <li><a class="nav-link" data-nav="quiz"><span class="nav-ico">&#129418;</span><span data-i18n="nav.quiz">Foxy Quiz</span></a></li>
           <li><a class="nav-link" data-nav="boost"><span class="nav-ico">&#9874;</span><span data-i18n="nav.boost">Sistema de Boost</span></a></li>
+          <li><a class="nav-link" data-nav="wiki"><span class="nav-ico">&#128214;</span><span data-i18n="nav.wiki">Wiki</span></a></li>
         </ul>
       </nav>
 
@@ -88,6 +90,11 @@
               <span class="fc-icon">&#9874;</span>
               <h3 data-i18n="nav.boost">Sistema de Boost</h3>
               <p data-i18n="home.boostDesc">Guia de melhoria, aprimoramento e reforja, com calculadoras de custo em cristais e gemas.</p>
+            </a>
+            <a class="feature-card" data-nav="wiki">
+              <span class="fc-icon">&#128214;</span>
+              <h3 data-i18n="nav.wiki">Wiki</h3>
+              <p data-i18n="home.wikiDesc">Parte informativa do boost: melhoria, aprimoramento, reforja e tabelas de referencia.</p>
             </a>
             <span class="feature-card soon">
               <span class="fc-icon">&#128202;</span>
@@ -267,15 +274,15 @@
           </div>
         </section>
 
-        <!-- ---------- SISTEMA DE BOOST ---------- -->
-        <section class="view" data-view="boost" id="view-boost">
-          <div class="boost-wrap">
+        <!-- ---------- WIKI ---------- -->
+        <section class="view" data-view="wiki" id="view-wiki">
+          <div class="wiki-wrap">
             <div class="view-head">
               <p class="view-eyebrow">Grand Line Adventures</p>
-              <h1 class="view-title" data-i18n="nav.boost">Sistema de Boost</h1>
-              <p class="view-sub">
-                Guia completo das melhorias de equipamento e ferramentas para calcular
-                quantos materiais (e quanto dinheiro) voce vai gastar.
+              <h1 class="view-title" data-i18n="wiki.title">Wiki do Boost</h1>
+              <p class="view-sub" data-i18n="wiki.sub">
+                Guia informativo das melhorias de equipamento: melhoria, aprimoramento e reforja,
+                com tabelas de cristais, garantia (pity), transferencia e reembolso.
               </p>
             </div>
 
@@ -448,6 +455,20 @@
                 Semanais (Hard).
               </div>
             </section>
+          </div>
+        </section>
+
+        <!-- ---------- SISTEMA DE BOOST ---------- -->
+        <section class="view" data-view="boost" id="view-boost">
+          <div class="boost-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.boost">Sistema de Boost</h1>
+              <p class="view-sub" data-i18n="boost.sub">
+                Calculadoras de custo em cristais e gemas. Precisa da parte teorica?
+                Consulte a Wiki do Boost.
+              </p>
+            </div>
 
             <!-- FERRAMENTAS -->
             <section id="ferramentas" class="block">
@@ -688,6 +709,7 @@
   <script src="assets/js/core/router.js"></script>
   <script src="assets/js/features/quiz.js"></script>
   <script src="assets/js/features/boost.js"></script>
+  <script src="assets/js/features/wiki.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
