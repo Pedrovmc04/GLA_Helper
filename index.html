@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/css/features/wiki.css" />
   <link rel="stylesheet" href="assets/css/features/xp.css" />
   <link rel="stylesheet" href="assets/css/features/wanted.css" />
+  <link rel="stylesheet" href="assets/css/features/coliseum.css" />
 </head>
 <body>
   <div class="ocean"></div>
@@ -59,6 +60,7 @@
           <li><a class="nav-link" data-nav="boost"><span class="nav-ico">&#9874;</span><span data-i18n="nav.boost">Sistema de Boost</span></a></li>
           <li><a class="nav-link" data-nav="wiki"><span class="nav-ico">&#128214;</span><span data-i18n="nav.wiki">Wiki</span></a></li>
           <li><a class="nav-link" data-nav="wanted"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span></a></li>
+          <li><a class="nav-link" data-nav="coliseum"><span class="nav-ico">&#127942;</span><span data-i18n="nav.coliseum">Coliseu</span></a></li>
         </ul>
       </nav>
 
@@ -97,6 +99,11 @@
               <span class="fc-icon">&#9760;</span>
               <h3 data-i18n="nav.wanted">Wanted Pirates</h3>
               <p data-i18n="home.wantedDesc">Counters recomendados para cada Wanted Pirate, com sprites e busca.</p>
+            </a>
+            <a class="feature-card" data-nav="coliseum">
+              <span class="fc-icon">&#127942;</span>
+              <h3 data-i18n="nav.coliseum">Coliseu</h3>
+              <p data-i18n="home.coliseumDesc">Recomendacoes de personagens para cada liga da Corrida Colosseum.</p>
             </a>
             <a class="feature-card" data-nav="wiki">
               <span class="fc-icon">&#128214;</span>
@@ -712,10 +719,15 @@
               <p class="view-sub" data-i18n="wanted.sub">Counters recomendados para cada Wanted Pirate. Pesquise pelo nome do alvo.</p>
             </div>
 
+            <div class="wanted-modes" role="group">
+              <button id="wanted-mode-target" class="btn btn-ghost" data-i18n="wanted.modeTarget">Por alvo</button>
+              <button id="wanted-mode-counter" class="btn btn-ghost" data-i18n="wanted.modeCounter">Por personagem</button>
+            </div>
+
             <div class="wanted-toolbar">
               <div class="wanted-search-box">
                 <span class="search-ico">&#128269;</span>
-                <input id="wanted-search" type="text" data-i18n-placeholder="wanted.searchPh" placeholder="Pesquisar Wanted Pirate" autocomplete="off" />
+                <input id="wanted-search" type="text" list="wanted-char-list" data-i18n-placeholder="wanted.searchPh" placeholder="Pesquisar Wanted Pirate" autocomplete="off" />
               </div>
               <div class="wanted-sort">
                 <button id="wanted-sort-original" class="btn btn-ghost" data-i18n="wanted.sortOriginal">Original</button>
@@ -724,11 +736,31 @@
               <span id="wanted-count" class="wanted-count"></span>
             </div>
 
+            <datalist id="wanted-char-list"></datalist>
+
             <div id="wanted-list" class="wanted-list"></div>
 
             <p class="muted small wanted-credit" data-i18n-html="wanted.credit">
               Match-ups por ThePlayerLost. Sprites: Drakantos GLA, via
               <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Labophase</a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- ---------- COLISEU ---------- -->
+        <section class="view" data-view="coliseum" id="view-coliseum">
+          <div class="coliseum-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.coliseum">Coliseu</h1>
+              <p class="view-sub" data-i18n="coliseum.sub">Recomendacoes de personagens para cada liga da Corrida Colosseum, com o oponente a esquerda e o pick recomendado a direita.</p>
+            </div>
+
+            <div id="coliseum-list"></div>
+
+            <p class="muted small coliseum-credit" data-i18n-html="coliseum.credit">
+              Informacoes da <a href="https://wiki.gla.com.br/index.php/Corrida_Colosseum" target="_blank" rel="noopener">Wiki GLA</a>.
+              Sprites: Drakantos GLA, via <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Labophase</a>.
             </p>
           </div>
         </section>
@@ -785,6 +817,7 @@
   <script src="assets/data/questions.js"></script>
   <script src="assets/data/boost-tables.js"></script>
   <script src="assets/data/wanted-data.js"></script>
+  <script src="assets/data/coliseum-data.js"></script>
   <script src="assets/i18n/pt-BR.js"></script>
   <script src="assets/i18n/en.js"></script>
   <script src="assets/js/core/storage.js"></script>
@@ -796,6 +829,7 @@
   <script src="assets/js/features/wiki.js"></script>
   <script src="assets/js/features/xp.js"></script>
   <script src="assets/js/features/wanted.js"></script>
+  <script src="assets/js/features/coliseum.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

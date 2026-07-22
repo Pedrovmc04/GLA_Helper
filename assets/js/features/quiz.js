@@ -11,10 +11,11 @@ window.GLA = window.GLA || {};
 
   function buildDeck() {
     var deck = [];
-    (window.QUESTIONS && QUESTIONS.verdadeiro || []).forEach(function (text) {
+    var Q = (typeof QUESTIONS !== "undefined" && QUESTIONS) || window.QUESTIONS || {};
+    (Q.verdadeiro || []).forEach(function (text) {
       deck.push({ text: text, answer: true });
     });
-    (window.QUESTIONS && QUESTIONS.falso || []).forEach(function (text) {
+    (Q.falso || []).forEach(function (text) {
       deck.push({ text: text, answer: false });
     });
     return deck;

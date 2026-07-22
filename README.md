@@ -14,6 +14,8 @@ por sidebar, sistema de perfis e multi-idioma (pt-BR / en).
   conforme o tier do personagem.
 - **Wanted Pirates** - counters recomendados para cada Wanted Pirate, com
   sprites e busca (match-ups por ThePlayerLost).
+- **Coliseu** - recomendacoes de personagens para cada liga da Corrida
+  Colosseum, com estrelas necessarias (ouro/prata).
 - **Wiki** - a parte informativa do boost (tabelas de referencia).
 
 Mais ferramentas estao planejadas em [PLANEJAMENTO.md](PLANEJAMENTO.md).
