@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="assets/css/features/wanted.css" />
   <link rel="stylesheet" href="assets/css/features/coliseum.css" />
   <link rel="stylesheet" href="assets/css/features/boats.css" />
+  <link rel="stylesheet" href="assets/css/features/diamonds.css" />
 </head>
 <body>
   <div class="ocean"></div>
@@ -63,6 +64,7 @@
           <li><a class="nav-link" data-nav="wanted"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span></a></li>
           <li><a class="nav-link" data-nav="coliseum"><span class="nav-ico">&#127942;</span><span data-i18n="nav.coliseum">Coliseu</span></a></li>
           <li><a class="nav-link" data-nav="boats"><span class="nav-ico">&#128674;</span><span data-i18n="nav.boats">Planejador de Barcos</span></a></li>
+          <li><a class="nav-link" data-nav="diamonds"><span class="nav-ico">&#128142;</span><span data-i18n="nav.diamonds">Planejador de Diamantes</span></a></li>
         </ul>
       </nav>
 
@@ -120,6 +122,11 @@
               <span class="fc-icon">&#128674;</span>
               <h3 data-i18n="nav.boats">Planejador de Barcos</h3>
               <p data-i18n="home.boatsDesc">Materiais, refino e custo em berries para arsenal e skins do navio.</p>
+            </a>
+            <a class="feature-card" data-nav="diamonds">
+              <span class="fc-icon">&#128142;</span>
+              <h3 data-i18n="nav.diamonds">Planejador de Diamantes</h3>
+              <p data-i18n="home.diamondsDesc">Selecione diamantes e descubra o minimo de personagens para conquistar todos.</p>
             </a>
           </div>
         </section>
@@ -816,6 +823,38 @@
           </div>
         </section>
 
+        <!-- ---------- PLANEJADOR DE DIAMANTES ---------- -->
+        <section class="view" data-view="diamonds" id="view-diamonds">
+          <div class="diamonds-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.diamonds">Planejador de Diamantes</h1>
+              <p class="view-sub" data-i18n="diamonds.sub">Cada diamante exige personagens de uma classe. Selecione os diamantes que quer conquistar e o otimizador acha o menor numero de personagens que cobre todos.</p>
+            </div>
+
+            <div class="diamonds-toolbar">
+              <button id="diamonds-all" class="btn btn-ghost" data-i18n="diamonds.selectAll">Selecionar todos</button>
+              <button id="diamonds-clear" class="btn btn-ghost" data-i18n="diamonds.clear">Limpar</button>
+            </div>
+
+            <div id="diamonds-grid" class="diamonds-grid"></div>
+
+            <div id="diamonds-character-lists" class="dia-character-lists"></div>
+
+            <div class="diamonds-optimize-bar">
+              <p class="muted small" data-i18n="diamonds.characterHint">Marque os personagens que deseja considerar. Se nenhum for marcado, todos os personagens disponiveis serao considerados.</p>
+              <button id="diamonds-optimize" class="btn btn-primary" data-i18n="diamonds.optimize">Otimizar selecao</button>
+            </div>
+
+            <div id="diamonds-result"></div>
+
+            <p class="muted small diamonds-credit" data-i18n-html="diamonds.credit">
+              Mecanica com base no <a href="https://lionheartgla.github.io/Gla-Database/dima.html" target="_blank" rel="noopener">Gla-Database (Lionheart)</a>.
+              Sprites: Drakantos GLA.
+            </p>
+          </div>
+        </section>
+
       </div>
 
       <footer class="page-footer">
@@ -870,6 +909,7 @@
   <script src="assets/data/wanted-data.js"></script>
   <script src="assets/data/coliseum-data.js"></script>
   <script src="assets/data/boats-data.js"></script>
+  <script src="assets/data/diamonds-data.js"></script>
   <script src="assets/i18n/pt-BR.js"></script>
   <script src="assets/i18n/en.js"></script>
   <script src="assets/js/core/storage.js"></script>
@@ -883,6 +923,7 @@
   <script src="assets/js/features/wanted.js"></script>
   <script src="assets/js/features/coliseum.js"></script>
   <script src="assets/js/features/boats.js"></script>
+  <script src="assets/js/features/diamonds.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

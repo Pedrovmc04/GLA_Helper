@@ -18,6 +18,8 @@ por sidebar, sistema de perfis e multi-idioma (pt-BR / en).
   Colosseum, com estrelas necessarias (ouro/prata).
 - **Planejador de Barcos** - materiais e custo em Berries do kit de upgrade
   dos barcos 2-5 e do arsenal completo do barco Lv 6, alem das skins.
+- **Planejador de Diamantes** - selecao de personagens por categoria, regra
+  de cinco personagens e otimizacao da menor equipe para varios diamantes.
 - **Wiki** - a parte informativa do boost (tabelas de referencia).
 
 Mais ferramentas estao planejadas em [PLANEJAMENTO.md](PLANEJAMENTO.md).
