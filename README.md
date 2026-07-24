@@ -16,6 +16,8 @@ por sidebar, sistema de perfis e multi-idioma (pt-BR / en).
   sprites e busca (match-ups por ThePlayerLost).
 - **Coliseu** - recomendacoes de personagens para cada liga da Corrida
   Colosseum, com estrelas necessarias (ouro/prata).
+- **Planejador de Barcos** - materiais e custo em Berries do kit de upgrade
+  dos barcos 2-5 e do arsenal completo do barco Lv 6, alem das skins.
 - **Wiki** - a parte informativa do boost (tabelas de referencia).
 
 Mais ferramentas estao planejadas em [PLANEJAMENTO.md](PLANEJAMENTO.md).

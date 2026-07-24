@@ -1,0 +1,119 @@
+/* =========================================================
+   boats.css - Planejador de Barcos
+   ========================================================= */
+
+.boats-wrap { max-width: 980px; margin: 0 auto; }
+
+.boats-section {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 20px 20px 24px;
+  box-shadow: var(--shadow);
+  margin-top: 18px;
+}
+.boats-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.boats-section-title {
+  font-family: "Cinzel", serif;
+  color: var(--gold-soft);
+  font-size: 22px;
+}
+.boats-toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+.boats-toolbar label { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+
+/* Icones */
+.boat-ico {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 19, 36, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11px; font-weight: 800; color: var(--gold-soft);
+}
+.boat-ico img { width: 100%; height: 100%; object-fit: contain; }
+.boat-ico.big { width: 46px; height: 46px; }
+
+/* Barcos 2-5: partes do kit */
+.boat-parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 8px; }
+.boat-part {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.boat-part-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.boat-part-head span:last-child { font-family: "Cinzel", serif; color: var(--gold-soft); font-size: 16px; }
+
+/* Grade de materiais */
+.boat-mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
+.boat-mat { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
+.boat-mat-txt { font-size: 13px; line-height: 1.3; color: var(--text); }
+.boat-mat-txt strong { color: var(--gold-soft); }
+
+.boat-sub {
+  font-family: "Cinzel", serif;
+  color: var(--gold);
+  font-size: 15px;
+  margin: 16px 0 8px;
+}
+
+.boat-total {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(232, 196, 104, 0.1);
+  border: 1px solid rgba(232, 196, 104, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.boat-total span { color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; font-size: 12px; }
+.boat-total strong { font-size: 22px; color: var(--gold-soft); font-variant-numeric: tabular-nums; }
+
+/* Catalogo de arsenal / skins */
+.boat-catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; margin-top: 10px; }
+.boat-pick {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 19, 36, 0.4);
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+}
+.boat-pick:hover { border-color: var(--gold); }
+.boat-pick.on { border-color: var(--gold); background: rgba(232, 196, 104, 0.12); }
+.boat-pick input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); flex-shrink: 0; }
+.boat-pick-name { flex: 1 1 auto; font-size: 13px; font-weight: 600; }
+.boat-qty {
+  width: 56px;
+  padding: 5px 6px;
+  font-size: 13px;
+  text-align: center;
+}
+.boat-qty:disabled { opacity: 0.4; }
+
+.boat-empty { color: var(--text-dim); padding: 14px 4px; font-size: 14px; }
+.boat-note { color: var(--text-dim); font-size: 12px; margin-top: 8px; }
+
+.boats-credit { margin-top: 18px; text-align: center; opacity: 0.8; }
+.boats-credit a { color: var(--gold); }
+
+@media (max-width: 560px) {
+  .boat-mat-grid { grid-template-columns: 1fr; }
+  .boat-catalog { grid-template-columns: 1fr; }
+}

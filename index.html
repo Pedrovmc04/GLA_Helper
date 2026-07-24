@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/features/xp.css" />
   <link rel="stylesheet" href="assets/css/features/wanted.css" />
   <link rel="stylesheet" href="assets/css/features/coliseum.css" />
+  <link rel="stylesheet" href="assets/css/features/boats.css" />
 </head>
 <body>
   <div class="ocean"></div>
@@ -61,13 +62,13 @@
           <li><a class="nav-link" data-nav="wiki"><span class="nav-ico">&#128214;</span><span data-i18n="nav.wiki">Wiki</span></a></li>
           <li><a class="nav-link" data-nav="wanted"><span class="nav-ico">&#9760;</span><span data-i18n="nav.wanted">Wanted Pirates</span></a></li>
           <li><a class="nav-link" data-nav="coliseum"><span class="nav-ico">&#127942;</span><span data-i18n="nav.coliseum">Coliseu</span></a></li>
+          <li><a class="nav-link" data-nav="boats"><span class="nav-ico">&#128674;</span><span data-i18n="nav.boats">Planejador de Barcos</span></a></li>
         </ul>
       </nav>
 
       <nav class="nav-group">
         <div class="nav-group-title" data-i18n="nav.soon">Em breve</div>
         <ul class="nav-list">
-          <li><a class="nav-link disabled"><span class="nav-ico">&#128674;</span><span data-i18n="nav.boats">Planejador de Barcos</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
           <li><a class="nav-link disabled"><span class="nav-ico">&#128203;</span><span data-i18n="nav.tracker">Tracker Semanal</span><span class="nav-badge" data-i18n="badge.soon">Soon</span></a></li>
         </ul>
       </nav>
@@ -115,12 +116,11 @@
               <h3 data-i18n="nav.xp">Calculadora de XP</h3>
               <p data-i18n="home.xpDesc">Descubra quantas pocoes de XP faltam para o nivel desejado.</p>
             </a>
-            <span class="feature-card soon">
+            <a class="feature-card" data-nav="boats">
               <span class="fc-icon">&#128674;</span>
               <h3 data-i18n="nav.boats">Planejador de Barcos</h3>
               <p data-i18n="home.boatsDesc">Materiais, refino e custo em berries para arsenal e skins do navio.</p>
-              <span class="fc-tag" data-i18n="badge.soon">Soon</span>
-            </span>
+            </a>
           </div>
         </section>
 
@@ -765,6 +765,57 @@
           </div>
         </section>
 
+        <!-- ---------- PLANEJADOR DE BARCOS ---------- -->
+        <section class="view" data-view="boats" id="view-boats">
+          <div class="boats-wrap">
+            <div class="view-head">
+              <p class="view-eyebrow">Grand Line Adventures</p>
+              <h1 class="view-title" data-i18n="nav.boats">Planejador de Barcos</h1>
+              <p class="view-sub" data-i18n="boats.sub">Materiais e custo em Berries do kit de upgrade dos barcos 2 a 5, e do arsenal completo do barco Lv 6 (com skins).</p>
+            </div>
+
+            <!-- Barcos 2-5 -->
+            <section class="boats-section">
+              <div class="boats-section-head">
+                <h2 class="boats-section-title" data-i18n="boats.lowTitle">Barcos 2 a 5 - Kit de Upgrade</h2>
+              </div>
+              <p class="muted small" data-i18n="boats.lowHint">Escolha o barco para ver o kit (Canhao, Vela, Casco), os materiais-base e o custo total.</p>
+              <div class="boats-toolbar">
+                <label for="boats-low-select" data-i18n="boats.boatLabel">Barco</label>
+                <select id="boats-low-select"></select>
+              </div>
+              <div id="boats-low-result"></div>
+            </section>
+
+            <!-- Barco 6: Arsenal -->
+            <section class="boats-section">
+              <div class="boats-section-head">
+                <h2 class="boats-section-title" data-i18n="boats.arsenalTitle">Barco 6 - Arsenal (Lv 6)</h2>
+                <button id="boats-arsenal-clear" class="btn btn-ghost" data-i18n="boats.clear">Limpar</button>
+              </div>
+              <p class="muted small" data-i18n="boats.arsenalHint">Marque as pecas que deseja construir e ajuste a quantidade. Os materiais-base e o custo total sao somados abaixo.</p>
+              <div id="boats-arsenal-grid" class="boat-catalog"></div>
+              <div id="boats-arsenal-result"></div>
+            </section>
+
+            <!-- Barco 6: Skins -->
+            <section class="boats-section">
+              <div class="boats-section-head">
+                <h2 class="boats-section-title" data-i18n="boats.skinsTitle">Skins do Barco</h2>
+                <button id="boats-skins-clear" class="btn btn-ghost" data-i18n="boats.clear">Limpar</button>
+              </div>
+              <p class="muted small" data-i18n="boats.skinsHint">Marque as skins desejadas para ver o total de tintas necessarias.</p>
+              <div id="boats-skins-grid" class="boat-catalog"></div>
+              <div id="boats-skins-result"></div>
+            </section>
+
+            <p class="muted small boats-credit" data-i18n-html="boats.credit">
+              Barcos 2-5 com base nos dados do usuario. Barco 6/arsenal, refino e skins com base no
+              <a href="https://maniackrackjack.github.io/labophase/" target="_blank" rel="noopener">Labophase</a> (sprites: Drakantos GLA).
+            </p>
+          </div>
+        </section>
+
       </div>
 
       <footer class="page-footer">
@@ -818,6 +869,7 @@
   <script src="assets/data/boost-tables.js"></script>
   <script src="assets/data/wanted-data.js"></script>
   <script src="assets/data/coliseum-data.js"></script>
+  <script src="assets/data/boats-data.js"></script>
   <script src="assets/i18n/pt-BR.js"></script>
   <script src="assets/i18n/en.js"></script>
   <script src="assets/js/core/storage.js"></script>
@@ -830,6 +882,7 @@
   <script src="assets/js/features/xp.js"></script>
   <script src="assets/js/features/wanted.js"></script>
   <script src="assets/js/features/coliseum.js"></script>
+  <script src="assets/js/features/boats.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
